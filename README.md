@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Toingg Campaign Management Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements a React-based frontend for managing Toingg campaigns. It allows users to:
 
-## Available Scripts
+- **Create Campaigns:** 
+    - Provide campaign details like title, voice, language, script, knowledge base, purpose, calendar, first line, and tone.
+    - Upload a knowledge base file.
+    - Enable post-call analysis.
+- **Make Calls:**
+    - Provide individual contact information (name, phone number) or upload a CSV file with a list of contacts.
+    - Select a campaign for the call.
+- **Check Call Status:**
+    - Retrieve the status of a call using the call ID.
+- **Get Call Transcription:**
+    - Retrieve the transcription of a call using the call ID.
+- **Get Post-Call Analysis:**
+    - Retrieve the post-call analysis of a call using the call ID (assuming the campaign is enabled for post-call analysis).
+- **Update Campaigns:**
+    - Provide the campaign ID and update the campaign details.
 
-In the project directory, you can run:
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Backend Setup (Express.js):**
+    ```
+    You need to have a backend server running (e.g., using Express.js) with the API endpoints defined in the backend/ directory. This code includes example API endpoints.
+    Make sure to update the API routes (create-campaign, update-campaign) in your backend to handle the new data structure from the frontend.
+    Replace YOUR_ACCESS_TOKEN with your actual Toingg API access token.
+    ```
+3. ## Running the Application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Start the Backend Server:**
+   ```bash
+   node server.js
+   ```
 
-### `npm test`
+2. **Start the Frontend:**
+   ```bash
+   npm run start 
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+src/
+  - App.js
+  - CampaignCreation.js
+  - MakeCall.js
+  - CallStatus.js
+  - CallTranscription.js
+  - CallAnalysis.js
+  - UpdateCampaign.js
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- This project is designed to interact with the Toingg API. Make sure you have an account and access token to use the API.
+- The backend code is an example and might need adjustments based on the specific structure of the Toingg API. 
+- Error handling and UI improvements are recommended for a production-ready application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## To-Do
 
-### `npm run eject`
+- Implement more robust error handling.
+- Add features like:
+    - Search for campaigns.
+    - Delete campaigns.
+    - View campaign analytics.
+- Improve the user interface (UI) and user experience (UX).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions are welcome! Please open an issue or submit a pull request.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Remember:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- You'll need to update the backend code and API routes to actually interact with the Toingg API. 
+- This README is a starting point. You can customize it further based on your project's specifics.
